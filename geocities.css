@@ -1,0 +1,53 @@
+/* GeoCities-style CSS transformations */
+body.geocitified {
+  background: #000 url('data:image/gif;base64,R0lGODlhBAAEAIABAAAAAP///yH5BAEAAAEALAAAAAAEAAQAAAIEjI+pWAA7') repeat !important;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive !important;
+  animation: rainbow-bg 5s infinite !important;
+}
+
+body.geocitified * {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive !important;
+}
+
+body.geocitified h1,
+body.geocitified h2,
+body.geocitified h3 {
+  color: #ff00ff !important;
+  text-shadow: 2px 2px #00ffff, 4px 4px #ffff00 !important;
+  animation: blink 1s infinite !important;
+}
+
+body.geocitified a {
+  color: #0000ff !important;
+  text-decoration: underline !important;
+  font-weight: bold !important;
+}
+
+body.geocitified a:visited {
+  color: #800080 !important;
+}
+
+body.geocitified img {
+  border: 5px solid #ff00ff !important;
+  animation: spin 10s linear infinite !important;
+}
+
+@keyframes rainbow-bg {
+  0% { background-color: #ff0000; }
+  16% { background-color: #ff8800; }
+  33% { background-color: #ffff00; }
+  50% { background-color: #00ff00; }
+  66% { background-color: #0088ff; }
+  83% { background-color: #8800ff; }
+  100% { background-color: #ff0000; }
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.5; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
