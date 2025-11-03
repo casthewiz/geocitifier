@@ -11,21 +11,35 @@ A Chrome extension that transforms any webpage into a glorious GeoCities-style m
 
 ## Installation
 
-### Load as Unpacked Extension (Development)
+### Quick Start (Local Development)
 
-1. Clone this repository:
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/casthewiz/geocitifier.git
    cd geocitifier
    ```
 
-2. Open Chrome and navigate to `chrome://extensions/`
+2. **Run the setup script** (recommended):
+   ```bash
+   chmod +x setup-local.sh
+   ./setup-local.sh
+   ```
+   
+   This script will:
+   - ✅ Verify all required files are present
+   - ✅ Validate the manifest.json
+   - ✅ Provide step-by-step instructions
+   - ✅ Optionally open Chrome's extensions page
 
-3. Enable "Developer mode" using the toggle in the top right corner
+3. **Or manually load the extension:**
+   - Open Chrome and navigate to `chrome://extensions/`
+   - Enable "Developer mode" (toggle in top right)
+   - Click "Load unpacked" and select the `geocitifier` directory
+   - The GeoCitifier extension should now appear in your extensions list
 
-4. Click "Load unpacked" and select the `geocitifier` directory
+### Installing from Chrome Web Store
 
-5. The GeoCitifier extension should now appear in your extensions list
+*(Coming soon - extension will be available on the Chrome Web Store)*
 
 ## Usage
 
@@ -36,14 +50,35 @@ A Chrome extension that transforms any webpage into a glorious GeoCities-style m
 
 ## Development
 
+### Running Locally
+
+This extension requires no build step - it's ready to run immediately!
+
+1. **After cloning, run the setup script:**
+   ```bash
+   ./setup-local.sh
+   ```
+
+2. **Make changes:**
+   - Edit any files directly (no compilation needed)
+   - Reload the extension in `chrome://extensions/` (click refresh icon)
+   - Reload the webpage you're testing on
+
+3. **Debugging:**
+   - **Popup**: Right-click extension icon → "Inspect popup"
+   - **Content Script**: Open DevTools on the webpage (F12)
+   - **Background**: Go to `chrome://extensions/` → Click "service worker" link
+
+For detailed development information, see [DEVELOPMENT.md](DEVELOPMENT.md).
+
 ### File Structure
 
 ```
 geocitifier/
 ├── manifest.json       # Extension configuration
 ├── popup.html          # Extension popup UI
-├── popup.css           # Popup styling
 ├── popup.js            # Popup functionality
+├── popup.css           # Popup styling
 ├── content.js          # Content script
 ├── geocities.css       # GeoCities styling
 ├── background.js       # Background service worker
@@ -52,6 +87,7 @@ geocitifier/
 │   ├── icon32.png
 │   ├── icon48.png
 │   └── icon128.png
+├── setup-local.sh      # Setup script for local development
 └── README.md
 ```
 

@@ -24,6 +24,8 @@ Thumbs.db
 .tmp/
 tmp/
 
-# Generated scripts
+# Generated scripts (keep setup scripts)
 icons/create_placeholder_icons.sh
-*.sh
+# Don't ignore setup scripts - they're needed for the repo
+# setup-local.sh
+# prepare-package.sh
